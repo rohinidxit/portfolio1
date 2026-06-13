@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-serif: "Playfair Display", serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --color-brand-blue: #EC4899;
+  --color-brand-cyan: #F472B6;
+  --color-brand-gold: #F472B6;
+  --color-bg-primary: #0B0414;
+  --color-bg-secondary: #11051F;
+  --color-card-bg: #1C0A30;
+
+  --animate-aurora: aurora 20s infinite alternate;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-slow: pulseSlow 8s ease-in-out infinite;
+
+  @keyframes aurora {
+    0% {
+      transform: translate(0px, 0px) scale(1);
+    }
+    33% {
+      transform: translate(30px, -50px) scale(1.1);
+    }
+    66% {
+      transform: translate(-20px, 20px) scale(0.95);
+    }
+    100% {
+      transform: translate(0px, 0px) scale(1);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-10px) rotate(1deg);
+    }
+  }
+
+  @keyframes pulseSlow {
+    0%, 100% {
+      opacity: 0.6;
+    }
+    50% {
+      opacity: 0.95;
+    }
+  }
+}
+
+/* Base custom resets & styling elements */
+html {
+  scroll-behavior: smooth;
+  background-color: #0B0414;
+  color: #F8FAFC;
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background-color: rgba(37, 99, 235, 0.4);
+  color: #ffffff;
+}
+
+/* Glassmorphism utility headers and cards */
+.glass-panel {
+  background: rgba(30, 41, 59, 0.65);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-nav {
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Glow effects */
+.glow-blue {
+  box-shadow: 0 0 35px -5px rgba(236, 72, 153, 0.35);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 35px -5px rgba(244, 114, 182, 0.35);
+}
+
+.glow-gold {
+  box-shadow: 0 0 35px -5px rgba(244, 114, 182, 0.25);
+}
+
+/* Custom scrollbar for an integrated digital console feeling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B0414;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1C0A30;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #EC4899;
+}
+
+/* Light mode overrides for responsive blushing palette */
+html.light {
+  --color-brand-blue: #DB2777; 
+  --color-brand-cyan: #EC4899;
+  --color-brand-gold: #EA580C;
+  --color-bg-primary: #FFF5F7; 
+  --color-bg-secondary: #FFEBF0; 
+  --color-card-bg: #FFFFFF;
+  
+  --color-slate-950: #FFF5F7 !important;
+  --color-slate-900: #FFEBF0 !important;
+  --color-slate-850: #FFD6E0 !important;
+  
+  background-color: #FFF5F7;
+  color: #1E293B;
+}
+
+html.light body {
+  color: #1E293B;
+  background-color: #FFF5F7;
+}
+
+html.light h1,
+html.light h2,
+html.light h3,
+html.light h4,
+html.light h5,
+html.light h6,
+html.light .text-white,
+html.light .font-serif.italic.text-white,
+html.light span.text-white {
+  color: #1E1B4B !important;
+}
+
+html.light p,
+html.light span,
+html.light li,
+html.light .text-slate-300,
+html.light .text-slate-350,
+html.light .text-slate-400 {
+  color: #475569 !important;
+}
+
+html.light .glass-panel,
+html.light .glass-nav {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(12px) !important;
+  border-color: rgba(236, 72, 153, 0.15) !important;
+  box-shadow: 0 10px 30px -10px rgba(236, 72, 153, 0.1) !important;
+}
+
+html.light .border-white\/10,
+html.light .border-white\/5,
+html.light .border-white\/15 {
+  border-color: rgba(236, 72, 153, 0.15) !important;
+}
+
+html.light input,
+html.light textarea,
+html.light select {
+  background-color: #FFFFFF !important;
+  color: #1E293B !important;
+  border-color: rgba(236, 72, 153, 0.25) !important;
+}
+
+html.light ::placeholder {
+  color: #94A3B8 !important;
+}
+
+html.light .glow-blue {
+  box-shadow: 0 0 35px -5px rgba(236, 72, 153, 0.15);
+}
+
+html.light .glow-cyan {
+  box-shadow: 0 0 35px -5px rgba(244, 114, 182, 0.15);
+}
+
+html.light .glow-gold {
+  box-shadow: 0 0 35px -5px rgba(244, 114, 182, 0.12);
+}
+
+html.light ::-webkit-scrollbar-track {
+  background: #FFF5F7;
+}
+
+html.light ::-webkit-scrollbar-thumb {
+  background: #FFD6E0;
+}
+
+/* Smooth globally animated transitions */
+html, body, section, div, h1, h2, h3, h4, p, span, button, input, textarea {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.15s ease;
+}
+

@@ -1,0 +1,6 @@
+{
+  "name": "Modern Futuristic Portfolio",
+  "description": "A premium, responsive, highly interactive personal portfolio website featuring glassmorphism, dynamic scrolling animations, timeline tracking, and modern design widgets.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
